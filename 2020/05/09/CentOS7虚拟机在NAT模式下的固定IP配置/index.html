@@ -5,17 +5,17 @@
   
 
   
-  <title>我的第一篇博客 | Hexo</title>
+  <title>CentOS7虚拟机在NAT模式下的固定IP配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##测试">
+  <meta name="description" content="环境说明虚拟机软件 VMware Workstation Pro 15ISO文件 CentOS-7-x86_64-DVD-1908.iso 下载地址 阿里云官方镜像站下载地址 选择OS镜像 网络配置配置IPcd &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts 进入网络配置目录vi ifcfg-ensxx 注意选择网卡，我的是ens33BOOTPROTP&#x3D;static 改成静态地址DE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2020/05/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="CentOS7虚拟机在NAT模式下的固定IP配置">
+<meta property="og:url" content="http://yoursite.com/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##测试">
+<meta property="og:description" content="环境说明虚拟机软件 VMware Workstation Pro 15ISO文件 CentOS-7-x86_64-DVD-1908.iso 下载地址 阿里云官方镜像站下载地址 选择OS镜像 网络配置配置IPcd &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts 进入网络配置目录vi ifcfg-ensxx 注意选择网卡，我的是ens33BOOTPROTP&#x3D;static 改成静态地址DE">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-08T12:14:26.000Z">
-<meta property="article:modified_time" content="2020-05-08T12:16:45.234Z">
+<meta property="article:published_time" content="2020-05-09T06:46:30.000Z">
+<meta property="article:modified_time" content="2020-05-09T07:23:52.236Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CentOS7虚拟机在NAT模式下的固定IP配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-05-08T12:14:26.000Z" itemprop="datePublished">2020-05-08</time>
+    <a href="/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2020-05-09T06:46:30.000Z" itemprop="datePublished">2020-05-09</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      CentOS7虚拟机在NAT模式下的固定IP配置
     </h1>
   
 
@@ -88,28 +88,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##测试</p>
+        <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>虚拟机软件 VMware Workstation Pro 15<br>ISO文件 CentOS-7-x86_64-DVD-1908.iso 下载地址 <a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">阿里云官方镜像站下载地址</a> 选择OS镜像</p>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h4 id="配置IP"><a href="#配置IP" class="headerlink" title="配置IP"></a>配置IP</h4><p>cd /etc/sysconfig/network-scripts 进入网络配置目录<br>vi ifcfg-ensxx 注意选择网卡，我的是ens33<br>BOOTPROTP=static 改成静态地址<br>DEFROUTE=yes<br>IPADDR=xx.xx.xx.xx 可以在VMware编辑＞虚拟网络编辑器查看网段<br>NETMASK=255.255.255.0<br>GATEWAY=xx.xx.xx.2<br>ONBOOT=yes 重启时有效<br>保存退出</p>
+<h4 id="配置域名服务器"><a href="#配置域名服务器" class="headerlink" title="配置域名服务器"></a>配置域名服务器</h4><p>vi /etc/resolv.conf<br>nameserver 119.29.29.29<br>保存退出</p>
+<h4 id="重启网络"><a href="#重启网络" class="headerlink" title="重启网络"></a>重启网络</h4><p>systemctl restart network 重启网络</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ck9y5zu880001v8vdhqq12dbt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/" data-id="ck9zaz8ul000060vd7uqp2vpr" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2020/05/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -142,11 +135,7 @@
       <ul>
         
           <li>
-            <a href="/2020/05/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/08/hello-world/">Hello World</a>
+            <a href="/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/">CentOS7虚拟机在NAT模式下的固定IP配置</a>
           </li>
         
       </ul>
