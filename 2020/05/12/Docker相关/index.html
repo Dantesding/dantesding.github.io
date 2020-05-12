@@ -15,7 +15,7 @@
 <meta property="og:description" content="CentOS7安装Docker yum list docker &#x2F;&#x2F;查询可下载的docker yum -y install xxx &#x2F;&#x2F;下载 systemctl start&#x2F;stop&#x2F;restart docker  基本命令相关链接  docker ps [OPTIONS]查看容器 docker logs [OPTIONS] CONTAINER查看容器日志  安装docker-compose相关链">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-12T03:24:03.000Z">
-<meta property="article:modified_time" content="2020-05-12T05:49:03.516Z">
+<meta property="article:modified_time" content="2020-05-12T09:13:35.562Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -100,15 +100,25 @@
 </ul>
 <h3 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h3><p><a href="https://blog.csdn.net/sinat_31032177/article/details/80282705" target="_blank" rel="noopener">相关链接</a></p>
 <ul>
-<li><code>curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-\</code>uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose           //下载并安装docker-compose`</li>
+<li>curl -L <a href="https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname</a> -s<code>-</code>uname -m` &gt; /usr/local/bin/docker-compose           //下载并安装docker-compose</li>
 <li>chmod +x /usr/local/bin/docker-compose</li>
 <li>docker-compose -version</li>
+</ul>
+<h3 id="docker内安装命令"><a href="#docker内安装命令" class="headerlink" title="docker内安装命令"></a>docker内安装命令</h3><ul>
+<li>apt-get update</li>
+<li>apt-get install vim -y</li>
+<li>apt-get install yum -y</li>
+</ul>
+<h3 id="docker安装postgresql"><a href="#docker安装postgresql" class="headerlink" title="docker安装postgresql"></a>docker安装postgresql</h3><ul>
+<li>docker pull postgres:10.0</li>
+<li>docker volume create pgdata</li>
+<li>docker run -it –name postgres -e POSTGRES_PASSWORD=123456 -p 55432:5432 -v pgdata:/var/lib/postgresql/data postgres:10.0</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/12/Docker%E7%9B%B8%E5%85%B3/" data-id="cka3hw0wb0001v4vddzhm5qn5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/12/Docker%E7%9B%B8%E5%85%B3/" data-id="cka3p7hhu00004svd2104624q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -116,6 +126,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/05/12/%E7%9F%A5%E8%AF%86%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          知识录
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/12/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
@@ -155,6 +174,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/05/12/%E7%9F%A5%E8%AF%86%E5%BD%95/">知识录</a>
+          </li>
         
           <li>
             <a href="/2020/05/12/Docker%E7%9B%B8%E5%85%B3/">Docker相关</a>
