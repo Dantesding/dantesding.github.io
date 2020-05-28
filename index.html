@@ -64,6 +64,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java线程实验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/28/java%E7%BA%BF%E7%A8%8B%E5%AE%9E%E9%AA%8C/" class="article-date">
+  <time datetime="2020-05-28T08:21:57.000Z" itemprop="datePublished">2020-05-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/28/java%E7%BA%BF%E7%A8%8B%E5%AE%9E%E9%AA%8C/">java线程实验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###测试CPU指令重排序<br>##代码<br>public class ThreadTest_reorder_01 {<br>    private static int x = 0, y = 0, a = 0, b = 0;<br>    public static void main(String[] args) throws Exception{<br>        int i = 0;<br>        while (true){<br>            i++;<br>            x = 0;<br>            y = 0;<br>            a = 0;<br>            b = 0;<br>            Thread one = new Thread(new Runnable() {<br>                @Override<br>                public void run() {<br>                    a = 1;<br>                    x = b;<br>                }<br>            });<br>            Thread two = new Thread(new Runnable() {<br>                @Override<br>                public void run() {<br>                    b = 1;<br>                    y = a;<br>                }<br>            });<br>            one.start();<br>            two.start();<br>            one.join();<br>            two.join();<br>            if(x == 0 &amp;&amp; y == 0){<br>                System.out.println(“第” + i + “次” + “x=” + x + “y=” + y);<br>                break;<br>            }<br>        }<br>    }<br>}</p>
+<p>结果 第3348518次x=0y=0</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/28/java%E7%BA%BF%E7%A8%8B%E5%AE%9E%E9%AA%8C/" data-id="ckaqjfi5l0004movd3b466ji8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-知识录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/12/%E7%9F%A5%E8%AF%86%E5%BD%95/" class="article-date">
@@ -93,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/12/%E7%9F%A5%E8%AF%86%E5%BD%95/" data-id="cka3u4snf0003wcvdfdi16l02" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/12/%E7%9F%A5%E8%AF%86%E5%BD%95/" data-id="ckaqjfi5k0003movdh0zsdaxx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/12/Docker%E7%9B%B8%E5%85%B3/" data-id="cka3u4slj0000wcvdenqw8v7h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/12/Docker%E7%9B%B8%E5%85%B3/" data-id="ckaqjfi570000movd4wy5c3yh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/12/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="cka3u4sls0001wcvd4j7we0el" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/12/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="ckaqjfi5j0002movda0s31r74" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/11/%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/" data-id="cka3u4sno0004wcvd4ung8tzu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/11/%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/" data-id="ckaqjfi5z0005movd9aaldckb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -287,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/" data-id="cka3u4sm20002wcvd9nhdhcf6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/" data-id="ckaqjfi5h0001movd2hgp7gop" class="article-share-link">Share</a>
       
       
     </footer>
@@ -328,6 +366,10 @@
       <ul>
         
           <li>
+            <a href="/2020/05/28/java%E7%BA%BF%E7%A8%8B%E5%AE%9E%E9%AA%8C/">java线程实验</a>
+          </li>
+        
+          <li>
             <a href="/2020/05/12/%E7%9F%A5%E8%AF%86%E5%BD%95/">知识录</a>
           </li>
         
@@ -341,10 +383,6 @@
         
           <li>
             <a href="/2020/05/11/%E8%B5%84%E6%BA%90%E9%93%BE%E6%8E%A5/">资源链接</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/09/CentOS7%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9C%A8NAT%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%9B%BA%E5%AE%9AIP%E9%85%8D%E7%BD%AE/">CentOS7虚拟机在NAT模式下的固定IP配置</a>
           </li>
         
       </ul>
